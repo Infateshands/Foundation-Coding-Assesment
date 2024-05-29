@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Cost Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Transport Cost Calculator</h1>
+        <form id="travelForm">
+            <label for="numPeople">Number of People:</label>
+            <input type="number" id="numPeople" name="numPeople" required>
+            
+            <label for="travelTime">Travel Time (hours):</label>
+            <input type="number" id="travelTime" name="travelTime" required>
+            
+            <label for="distance">Distance (km):</label>
+            <input type="number" id="distance" name="distance" required>
+            
+            <button type="submit">Show Transport Options</button>
+        </form>
+
+        <div id="transportOptions" style="display: none;">
+            <h2>Transport Options</h2>
+            <div id="options"></div>
+        </div>
+
+        <div id="costDetails" style="display: none;">
+            <h2>Transport Cost</h2>
+            <p id="cost"></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
