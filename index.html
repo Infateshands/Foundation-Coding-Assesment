@@ -5,33 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transport Cost Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+
 </head>
 <body>
-    <div id="app">
-        <h1>Transport Cost Calculator</h1>
-        <form id="travelForm">
-            <label for="numPeople">Number of People:</label>
-            <input type="number" id="numPeople" name="numPeople" required>
-            
-            <label for="travelTime">Travel Time (hours):</label>
-            <input type="number" id="travelTime" name="travelTime" required>
-            
-            <label for="distance">Distance (km):</label>
-            <input type="number" id="distance" name="distance" required>
-            
-            <button type="submit">Show Transport Options</button>
-        </form>
+    <div class="container">
+        <h1>Transport Cost</h1>
+        <div id="app">
+        
+            <div class="left-column">
+                <h2>Search</h2>
+                <form id="travelForm">
+                    <label for="numPeople">Number of People:</label>
+                    <input type="number" id="numPeople" name="numPeople" required>
+                    
+                    <label for="travelDays">Travel Time (days):</label>
+                    <input type="number" id="travelDays" name="travelDays" required>
+                    
+                    <label for="distance">Distance (km):</label>
+                    <input type="number" id="distance" name="distance" required>
+                    
+                    <button type="submit" class="btn btn-primary hvr-grow">Show Transport Options</button>
 
-        <div id="transportOptions" style="display: none;">
-            <h2>Transport Options</h2>
-            <div id="options"></div>
-        </div>
-
-        <div id="costDetails" style="display: none;">
-            <h2>Transport Cost</h2>
-            <p id="cost"></p>
+                </form>
+                
+            </div>
+            <div class="right-column">
+                <h2>Results</h2>
+                <div id="transportOptions" style="display: none;">
+                    <h2>Transport Options</h2>
+                    <div id="options"></div>
+                </div>
+            </div>
+            <div class="third-column">
+                <h2>Costs</h2>
+                <div id="costDetails" style="display: none;">
+                    <h2>Transport Cost</h2>
+                    <p id="cost"></p>
+                </div>
+            </div>
+           
+    
+            
         </div>
     </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>

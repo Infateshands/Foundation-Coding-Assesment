@@ -6,7 +6,9 @@ body {
 }
 
 #app {
-    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    
     margin: 0 auto;
     padding: 20px;
     background: white;
@@ -14,6 +16,19 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.left-column {
+    flex: 1;
+    padding: 20px;
+}
+
+.right-column {
+    flex: 1;
+    padding: 20px;
+}
+.third-column {
+    flex: 1;
+    padding: 20px;
+}
 h1 {
     text-align: center;
 }
@@ -28,7 +43,7 @@ label {
 }
 
 input[type="number"] {
-    width: 100%;
+    width: 50%;
     padding: 8px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -37,7 +52,7 @@ input[type="number"] {
 
 button {
     display: inline-block;
-    width: 100%;
+    width: 50%;
     padding: 10px;
     background-color: #007BFF;
     color: white;
