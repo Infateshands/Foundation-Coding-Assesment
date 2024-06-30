@@ -6,13 +6,13 @@
     <title>Transport Cost Calculator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.0/ladda-themeless.min.css">
 </head>
 <body>
     <div class="container">
         <h1>Transport Cost</h1>
         <div id="app">
-        
+            <!-- search -->
             <div class="left-column">
                 <h2>Search</h2>
                 <form id="travelForm">
@@ -25,11 +25,12 @@
                     <label for="distance">Distance (km):</label>
                     <input type="number" id="distance" name="distance" required>
                     
-                    <button type="submit" class="btn btn-primary hvr-grow">Show Transport Options</button>
-
+                    <button id="submitBtn" type="submit" class="btn btn-primary ladda-button" data-style="expand-right">
+                        <span class="ladda-label">Show Transport Options</span>
+                    </button>
                 </form>
-                
             </div>
+            <!-- results -->
             <div class="right-column">
                 <h2>Results</h2>
                 <div id="transportOptions" style="display: none;">
@@ -37,6 +38,7 @@
                     <div id="options"></div>
                 </div>
             </div>
+            <!-- costs -->
             <div class="third-column">
                 <h2>Costs</h2>
                 <div id="costDetails" style="display: none;">
@@ -44,14 +46,12 @@
                     <p id="cost"></p>
                 </div>
             </div>
-           
-    
-            
         </div>
     </div>
     
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Ladda/1.0.0/ladda.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

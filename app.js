@@ -1,13 +1,26 @@
 $(document).ready(function () {
+    // Initialize Ladda on the submit button
+    Ladda.bind('#submitBtn');
+
     $('#travelForm').on('submit', function (e) {
         e.preventDefault();
+
+      
+        var laddaButton = Ladda.create(document.querySelector('#submitBtn'));
+        laddaButton.start();
 
         let numPeople = parseInt($('#numPeople').val());
         let travelDays = parseInt($('#travelDays').val());
         let distance = parseInt($('#distance').val());
 
-        let { options, message } = calculateTransportOptions(numPeople, travelDays, distance);
-        displayTransportOptions(options, message);
+        
+        setTimeout(function() {
+            let { options, message } = calculateTransportOptions(numPeople, travelDays, distance);
+            displayTransportOptions(options, message);
+            
+           
+            laddaButton.stop();
+        }, 1000); 
     });
 
     function calculateTransportOptions(numPeople, travelDays, distance) {
@@ -49,7 +62,7 @@ $(document).ready(function () {
                         <p>Capacity: ${option.minCapacity}-${option.maxCapacity} people</p>
                         <p>Fuel Consumption: ${(option.fuelConsumption * 100).toFixed(2)}L/100km</p>
                         <p>Hire Cost: $${option.hireCostPerDay}/day (Min: ${option.minDays} days, Max: ${option.maxDays} days)</p>
-                        <button class="calculateCost" data-type="${option.type}" data-fuel="${option.fuelConsumption}" data-hire="${option.hireCostPerDay}">Calculate Cost</button>
+                        <button class="calculateCost btn btn-secondary hvr-pulse" data-type="${option.type}" data-fuel="${option.fuelConsumption}" data-hire="${option.hireCostPerDay}">Calculate Cost</button>
                     </div>
                 `);
                 optionsDiv.append(optionDiv);
@@ -70,7 +83,7 @@ $(document).ready(function () {
     }
 
     function calculateCost(fuelConsumption, distance, hireCostPerDay, travelDays) {
-        let fuelPricePerLiter = 1.5; // Assume $1.5 per liter
+        let fuelPricePerLiter = 1.5; // Assuming $1.5 per liter
         let totalFuel = (fuelConsumption * distance); // Total liters of fuel needed
         let totalFuelCost = totalFuel * fuelPricePerLiter; // Total cost for fuel
         let totalHireCost = hireCostPerDay * travelDays; // Total hire cost for the number of days
