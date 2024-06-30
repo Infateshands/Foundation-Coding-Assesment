@@ -80,9 +80,9 @@ $(document).ready(function () {
 
     function displayCost(costs) {
         $('#cost').html(`
-            <p>Fuel Cost: $${costs.totalFuelCost.toFixed(2)}</p>
-            <p>Hire Cost: $${costs.totalHireCost.toFixed(2)}</p>
-            <p>Total Cost: $${costs.totalCost.toFixed(2)}</p>
+            <p class="costTitle">Fuel Cost: </p><p> $${costs.totalFuelCost.toFixed(2)}</p>
+            <p class="costTitle">Hire Cost: </p><p>$${costs.totalHireCost.toFixed(2)}</p>
+            <p class="costTitle">Total Cost: </p><p>$${costs.totalCost.toFixed(2)}</p>
         `);
         $('#costDetails').show();
     }
